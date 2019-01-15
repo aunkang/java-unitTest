@@ -1,13 +1,13 @@
 package com.example.demo;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 import com.example.demo.pojo.Student;
 
+@Component
 public class Sort {
 	
-	public Student[] sortByAgeAscendingWithList(Student[] students) {
+	public Student[] sortByAgeAscending(Student[] students) {
 	
 		int length = students.length;
 		Student temp;
