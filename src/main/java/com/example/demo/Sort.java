@@ -1,6 +1,11 @@
 package com.example.demo;
 
+import java.util.Collections;
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
 import org.springframework.stereotype.Component;
+import org.yaml.snakeyaml.util.ArrayUtils;
 
 import com.example.demo.pojo.Student;
 
@@ -51,6 +56,14 @@ public class Sort {
 				}
 			}
 		}
+		
+		return students;
+	}
+	
+	public Student[] sortByFirstNameAscending(Student[] students) {
+		List<?> studentList = Arrays.asList(sortByFirstNameDescending(students));
+		Collections.reverse(studentList);
+		students = studentList.toArray(students);
 		
 		return students;
 	}

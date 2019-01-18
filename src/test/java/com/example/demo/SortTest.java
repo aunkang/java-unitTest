@@ -104,4 +104,29 @@ public class SortTest {
 		}
 	}
 	
+	@Test
+	public void sortByFirstNameDescendingEvenTest() {
+		
+		expectedResult = new Student[]{ student4, student2 , student3, student5 };
+		
+		Student[] output = sort.sortByFirstNameDescending(new Student[]{ student2 , student3, student4, student5 });
+		
+		for (int i=0; i< output.length; i++) {
+			assertThat(output[i].getFirstName()).isEqualTo(expectedResult[i].getFirstName());
+		}
+	}
+	
+	@Test
+	public void sortByFirstNameAscendingOddTest() {
+		
+		expectedResult = new Student[]{ student1, student5 , student3, student2, student4 };
+		
+		Student[] output = sort.sortByFirstNameAscending(new Student[]{ student1, student2 , student3, student4, student5 });
+		
+		for (int i=0; i< output.length; i++) {
+			assertThat(output[i].getFirstName()).isEqualTo(expectedResult[i].getFirstName());
+		}
+	}
+	
+	
 }
