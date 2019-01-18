@@ -2,6 +2,8 @@ package com.example.demo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Date;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,6 +33,12 @@ public class SortTest {
 		student3.setAge(22);
 		student4.setAge(20);
 		student5.setAge(16);
+		
+		student1.setFirstName("aunkang");
+		student2.setFirstName("june");
+		student3.setFirstName("John");
+		student4.setFirstName("Xynos");
+		student5.setFirstName("bobo");
 
     }
 	
@@ -49,8 +57,7 @@ public class SortTest {
 	
 	@Test
 	public void sortByAgeAscendingOddLengthTest() {
-		
-		
+				
 		expectedResult = new Student[]{student5, student2, student1, student4, student3};
 		
 		Student[] output = sort.sortByAgeAscending(new Student[]{ student1, student2, student3, student4, student5 });
@@ -59,6 +66,42 @@ public class SortTest {
 			assertThat(output[i].getAge()).isEqualTo(expectedResult[i].getAge());
 		}
 		
+	}
+	
+	@Test
+	public void sortByAgeDescendingOddLengthTest() {
+		
+		expectedResult = new Student[]{student3, student4, student1, student2, student5};
+		
+		Student[] output = sort.sortByAgeDescending(new Student[]{ student1, student2 , student3, student4, student5 });
+		
+		for (int i=0; i< output.length; i++) {
+			assertThat(output[i].getAge()).isEqualTo(expectedResult[i].getAge());
+		}
+	}
+	
+	@Test
+	public void sortByAgeDescendingEvenLengthTest() {
+		
+		expectedResult = new Student[]{student4, student1, student2, student5};
+		
+		Student[] output = sort.sortByAgeDescending(new Student[]{ student1, student2, student4, student5 });
+		
+		for (int i=0; i< output.length; i++) {
+			assertThat(output[i].getAge()).isEqualTo(expectedResult[i].getAge());
+		}
+	}	
+	
+	@Test
+	public void sortByFirstNameDescendingOddTest() {
+		
+		expectedResult = new Student[]{ student4, student2 , student3, student5, student1 };
+		
+		Student[] output = sort.sortByFirstNameDescending(new Student[]{ student1, student2 , student3, student4, student5 });
+		
+		for (int i=0; i< output.length; i++) {
+			assertThat(output[i].getFirstName()).isEqualTo(expectedResult[i].getFirstName());
+		}
 	}
 	
 }
