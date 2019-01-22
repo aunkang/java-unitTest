@@ -19,7 +19,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.example.demo.pojo.Student;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MockExample {
+public class MockExampleTest {
 	
 	@Mock List<Integer> intList;
 	@Spy List<String> spiedList = new ArrayList<String>();
