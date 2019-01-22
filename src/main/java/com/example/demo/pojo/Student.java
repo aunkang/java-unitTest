@@ -2,6 +2,10 @@ package com.example.demo.pojo;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.Random;
+
 public class Student {
 	
 	private String studentId;
@@ -10,7 +14,11 @@ public class Student {
 	private String classRoom;
 	private Date birthday;
 	private int age;
+	private Random r;
 	
+	public double getSignature() {
+		return r.getRandomNumber();
+	}
 	
 	public int getAge() {
 		return age;

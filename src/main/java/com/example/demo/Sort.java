@@ -1,19 +1,17 @@
 package com.example.demo;
 
 import java.util.Collections;
+
 import java.util.List;
 
 import org.assertj.core.util.Arrays;
 import org.springframework.stereotype.Component;
-import org.yaml.snakeyaml.util.ArrayUtils;
-
 import com.example.demo.pojo.Student;
 
 @Component
 public class Sort {
 	
 	public Student[] sortByAgeAscending(Student[] students) {
-	
 		int length = students.length;
 		Student temp;
 		for (int i = 0;i< length-1; i++) {
